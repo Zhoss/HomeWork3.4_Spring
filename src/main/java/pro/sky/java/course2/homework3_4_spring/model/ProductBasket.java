@@ -1,15 +1,18 @@
 package pro.sky.java.course2.homework3_4_spring.model;
 
+
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.annotation.SessionScope;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
-//@Repository
+@Repository
+@SessionScope
 public class ProductBasket {
-    private final Map<Integer, Product> productBasket = new HashMap<>();
+    private final Set<Integer> productBasket = new HashSet<>();
 
-    public Map<Integer, Product> getProductBasket() {
+    public Set<Integer> getProductBasket() {
         return productBasket;
     }
 }
